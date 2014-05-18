@@ -24,7 +24,7 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function(api) {
-  api.use('autocomplete');
+  api.use('autocomplete-nomatch');
 
   api.use('coffeescript');
   api.use('tinytest');
