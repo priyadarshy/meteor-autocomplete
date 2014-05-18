@@ -1,10 +1,10 @@
 {
     "name": "autocomplete",
     "description": "Text input autocomplete using Meteor collections",
-    "homepage": "https://github.com/mizzao/meteor-autocomplete",
-    "author": "Andrew Mao  (https://github.com/mizzao/)",
+    "homepage": "https://github.com/priyadarshy/meteor-autocomplete",
+    "author": "Ashutosh Priyadarshy  (https://github.com/priyadarshy/)",
     "version": "0.4.4",
-    "git": "https://github.com/mizzao/meteor-autocomplete.git",
+    "git": "https://github.com/priyadarshy/meteor-autocomplete.git",
     "packages": {
       "caret-position": {}
     }
