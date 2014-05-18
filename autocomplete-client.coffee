@@ -159,7 +159,6 @@ class @AutoComplete
 
   onKeyDown: (e) ->
     return if @matched is -1 or (@constructor.KEYS.indexOf(e.keyCode) < 0)
-
     e.preventDefault()
     switch e.keyCode
       when 9, 13 # TAB, ENTER
@@ -228,8 +227,8 @@ class @AutoComplete
   # Replace text with currently selected item
   select: ->
     doc = UI.getElementData @tmplInst.find(".-autocomplete-item.selected")
+    @rules[@matched].nomatch?(@getText()) unless doc
     return false unless doc # Don't select if nothing matched
-
     @processSelection(doc, @rules[@matched])
     return true
 
