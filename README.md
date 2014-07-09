@@ -5,8 +5,6 @@ Client/server autocompletion designed for Meteor's collections and reactivity.
 
 Check out a demo app at http://autocomplete.meteor.com or the [source](examples/pubsublocal).
 
-Help keep your favorite Meteor packages alive! If you depend on this package in your app and find it useful, consider a donation at [Gittip](https://www.gittip.com/mizzao/) for me (or other Meteor package maintainers).
-
 ## What's this do?
 
 Auto-completes typing in text `input`s or `textarea`s from different local or remote Meteor collections when triggered by certain symbols. You've probably seen this when referring to users or issues in a GitHub conversation. For example, you may want to ping a user:
@@ -95,7 +93,9 @@ Template.foo.settings = function() {
 - `filter`: (optional) An object that will be merged with the autocomplete selector to limit the results to more specific documents in the collection.
 - `noMatchTemplate`: (optional) A template to display when nothing matches. This template can use the [reactive functions on the AutoComplete object](autocomplete-client.coffee) to display a specific message, or be [assigned mouse/keyboard events](http://docs.meteor.com/#eventmaps) for user interaction.
 - `callback`: (optional) A function which is called when an item is selected with arguments `(doc, element)`, corresponding to the document of the selected item and the active input field.
-
+- `nomatch`: (optional) A function which is called when the
+  autocompleter does not find a match and the user attempts to use the
+  text written in the box.
 Default matcher arguments: the default behavior is to create a regex against the field to be matched, which will be constructed using the arguments below.
 
 - `field`: The field of the collection that the rule will match against. Can be nested, i.e. `'profile.foo'`.
