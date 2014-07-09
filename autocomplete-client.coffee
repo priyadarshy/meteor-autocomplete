@@ -159,6 +159,7 @@ class @AutoComplete
 
   onKeyDown: (e) ->
     return if @matched is -1 or (@constructor.KEYS.indexOf(e.keyCode) < 0)
+    if e.keyCode is 9 and e.shiftKey then return true
     e.preventDefault()
     switch e.keyCode
       when 9, 13 # TAB, ENTER
