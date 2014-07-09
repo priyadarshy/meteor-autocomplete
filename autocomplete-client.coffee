@@ -159,7 +159,7 @@ class @AutoComplete
 
   onKeyDown: (e) ->
     return if @matched is -1 or (@constructor.KEYS.indexOf(e.keyCode) < 0)
-    if e.keyCode is 9 and e.shiftKey then return true
+    if e.keyCode is 9 and e.shiftKey then return true    
     e.preventDefault()
     switch e.keyCode
       when 9, 13 # TAB, ENTER
@@ -287,14 +287,14 @@ class @AutoComplete
     offset = getCaretCoordinates(@element, @element.selectionStart)
 
     pos = {
-      left: position.left + offset.left
+      left: position.left
     }
 
     # Position menu from top (above) or from bottom of caret (below, default)
     if @position is "top"
       pos.bottom = @$element.offsetParent().height() - position.top - offset.top
     else
-      pos.top = position.top + offset.top + parseInt(@$element.css('font-size'))
+      pos.top = position.top + offset.top + parseInt(@$element.css('font-size')) + 15
 
     @tmplInst.$(".-autocomplete-container").css(pos)
 
