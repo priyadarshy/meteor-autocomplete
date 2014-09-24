@@ -1,12 +1,15 @@
 Package.describe({
-  summary: "Client/server autocompletion designed for Meteor's collections and reactivity"
+  summary: "Client/server autocompletion designed for Meteor's collections and reactivity",
+  version: "0.6.0",
+  git: "https://github.com/priyadarshy/meteor-autocomplete.git"
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom("METEOR@0.9.0");
   api.use(['ui', 'templating', 'jquery'], 'client');
   api.use(['coffeescript', 'underscore']); // both
 
-  api.use('caret-position', 'client');
+  api.use("dandv:caret-position@2.1.0-3", 'client');
 
   // Our files
   api.add_files([
@@ -24,7 +27,7 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function(api) {
-  api.use('autocomplete-nomatch');
+  api.use("../ashutosh:autocomplete-nomatch");
 
   api.use('coffeescript');
   api.use('tinytest');
