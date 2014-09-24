@@ -27,7 +27,7 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function(api) {
-  api.use("../ashutosh:autocomplete-nomatch");
+  api.use("ashutosh:autocomplete-nomatch", "client");
 
   api.use('coffeescript');
   api.use('tinytest');
